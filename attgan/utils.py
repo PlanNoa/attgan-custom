@@ -38,7 +38,7 @@ flatten_dense = flatten_fully_connected
 
 def session(graph=None, allow_soft_placement=True,
             log_device_placement=False, allow_growth=True):
-    """Return a Session with simple config."""
+
     config = tf.ConfigProto(allow_soft_placement=allow_soft_placement,
                             log_device_placement=log_device_placement)
     config.gpu_options.allow_growth = allow_growth
@@ -50,12 +50,7 @@ def shape(tensor):
     return [num if num is not None else -1 for num in sp]
 
 def load_checkpoint(ckpt_dir_or_file, session, var_list=None):
-    """Load checkpoint.
 
-    Note:
-        This function add some useless ops to the graph. It is better
-        to use tf.train.init_from_checkpoint(...).
-    """
     if os.path.isdir(ckpt_dir_or_file):
         ckpt_dir_or_file = tf.train.latest_checkpoint(ckpt_dir_or_file)
 
