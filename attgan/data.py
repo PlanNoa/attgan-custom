@@ -140,7 +140,7 @@ class Celeba(Dataset):
 
         img_dir = os.path.join(data_dir, 'img_align_celeba_png')
 
-        names = ["dummy.png", "result.png"]
+        names = ["result.png"]
         img_paths = [os.path.join(img_dir, name.replace('.jpg', '.png')) for name in names]
         labels = list(map(slimnet.get_attr, img_paths))
 

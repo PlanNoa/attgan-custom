@@ -14,7 +14,7 @@ class slimcnn:
                                       transforms.ToTensor(),
                                       transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
                                    ])
-        self.model = SlimNet.load_pretrained('../slimcnn/models/celeba_20.pth').to(self.device)
+        self.model = SlimNet.load_pretrained('slimcnn/models/celeba_20.pth').to(self.device)
 
 
     def get_attr(self, PATH):
