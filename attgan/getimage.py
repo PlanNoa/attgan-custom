@@ -42,9 +42,6 @@ class _attgan:
         self.use_cropped_img = True
         self.experiment_name = '384_shortcut1_inject1_none_hd'
 
-
-    def getimage(self, att):
-
         self.sess = utf.session()
         self.te_data = data.Celeba('attgan/data', self.img_size, 1, sess=self.sess, crop=not self.use_cropped_img)
 
@@ -59,6 +56,8 @@ class _attgan:
 
         ckpt_dir = 'attgan/model/%s/checkpoints' % self.experiment_name
         utf.load_checkpoint(ckpt_dir, self.sess)
+        
+    def getimage(self, att):
 
         for idx, batch in enumerate(self.te_data):
             xa_sample_ipt = batch[0]
