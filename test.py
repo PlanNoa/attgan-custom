@@ -1,6 +1,4 @@
-import argparse
 from functools import partial
-import json
 
 import numpy as np
 import os
@@ -15,36 +13,35 @@ import imageio
 # =                                    param                                   =
 # ==============================================================================
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--experiment_name', dest='experiment_name', help='experiment_name')
-parser.add_argument('--test_int', dest='test_int', type=float, default=1.0, help='test_int')
-args_ = parser.parse_args()
-# with open('./output/%s/setting.txt' % args_.experiment_name) as f:
-#     args = json.load(f)
-with open('output/128_shortcut1_inject1_none_40/setting.txt') as f:
-    args = json.load(f)
-
 # model
-atts = args['atts']
+atts = ["Bald",
+        "Bangs",
+        "Black_Hair",
+        "Blond_Hair",
+        "Brown_Hair",
+        "Bushy_Eyebrows",
+        "Eyeglasses",
+        "Male",
+        "Mouth_Slightly_Open",
+        "Mustache",
+        "No_Beard",
+        "Pale_Skin",
+        "Young"]
 n_att = len(atts)
-img_size = args['img_size']
-shortcut_layers = args['shortcut_layers']
-inject_layers = args['inject_layers']
-enc_dim = args['enc_dim']
-dec_dim = args['dec_dim']
-dis_dim = args['dis_dim']
-dis_fc_dim = args['dis_fc_dim']
-enc_layers = args['enc_layers']
-dec_layers = args['dec_layers']
-dis_layers = args['dis_layers']
-# testing
-thres_int = args['thres_int']
-# test_int = args_.test_int
+img_size = 384
+shortcut_layers = 1
+inject_layers = 1
+enc_dim = 48
+dec_dim = 48
+dis_dim = 48
+dis_fc_dim = 512
+enc_layers = 5
+dec_layers = 5
+dis_layers = 5
+thres_int = 0.5
 test_int = 1.0
-# others
-use_cropped_img = args['use_cropped_img']
-# experiment_name = args_.experiment_name
-experiment_name = '128_shortcut1_inject1_none_40'
+use_cropped_img = True
+experiment_name = '384_shortcut1_inject1_none_hd'
 
 # ==============================================================================
 # =                                   graphs                                   =
