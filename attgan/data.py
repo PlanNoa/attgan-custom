@@ -3,7 +3,7 @@ import os
 import numpy as np
 import tensorflow as tf
 import tensorflow.contrib.eager as tfe
-from utils import session
+from attgan.utils import session
 
 from slimcnn.getattr import slimcnn
 
@@ -53,8 +53,6 @@ def disk_image_batch_dataset(img_paths, batch_size, labels=None, prefetch_batch=
             return map_func(*parse_func(*args))
     else:
         map_func_ = parse_func
-
-    # dataset = dataset.map(parse_func, num_parallel_calls=num_threads) is slower
 
     dataset = batch_dataset(dataset, batch_size, prefetch_batch, drop_remainder, filter,
                             map_func_, num_threads, shuffle, buffer_size, repeat)

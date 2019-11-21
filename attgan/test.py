@@ -3,10 +3,10 @@ from functools import partial
 import numpy as np
 import os
 import tensorflow as tf
-import utils as utf
+import attgan.utils as utf
 
-import data
-import models
+import attgan.data as data
+import attgan.models as models
 import imageio
 
 atts = ["Bald",
@@ -50,7 +50,7 @@ _b_sample = tf.placeholder(tf.float32, shape=[None, n_att])
 x_sample = Gdec(Genc(xa_sample, is_training=False), _b_sample, is_training=False)
 
 
-ckpt_dir = './output/%s/checkpoints' % experiment_name
+ckpt_dir = './model/%s/checkpoints' % experiment_name
 utf.load_checkpoint(ckpt_dir, sess)
 
 # sample
@@ -72,10 +72,10 @@ for idx, batch in enumerate(te_data):
         x_sample_opt_list.append(sess.run(x_sample, feed_dict={xa_sample: xa_sample_ipt, _b_sample: _b_sample_ipt}))
     sample = np.concatenate(x_sample_opt_list, 2)
 
-    save_dir = './output/%s/sample_testing' % experiment_name
+    save_dir = '../output'
     if not os.path.isdir(save_dir):
         os.mkdir(save_dir)
-    imageio.imwrite('%s/%d.png' % (save_dir, idx + 13000), sample.squeeze(0))
+    imageio.imwrite('%s/%d.png' % (save_dir, idx), sample.squeeze(0))
 
     print('%d.png done!' % (idx + 182638))
 

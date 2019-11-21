@@ -2,7 +2,7 @@ from functools import partial
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-import utils as utf
+import attgan.utils as utf
 
 
 conv = partial(slim.conv2d, activation_fn=None)
