@@ -43,8 +43,10 @@ class _attgan:
         self.experiment_name = '384_shortcut1_inject1_none_hd'
 
 
+    def getimage(self, att):
+
         self.sess = utf.session()
-        self.te_data = data.Celeba('./data', self.img_size, 1, sess=self.sess, crop=not self.use_cropped_img)
+        self.te_data = data.Celeba('attgan/data', self.img_size, 1, sess=self.sess, crop=not self.use_cropped_img)
 
         Genc = partial(models.Genc, dim=self.enc_dim, n_layers=self.enc_layers)
         Gdec = partial(models.Gdec, dim=self.dec_dim, n_layers=self.dec_layers,
@@ -55,10 +57,8 @@ class _attgan:
 
         self.x_sample = Gdec(Genc(self.xa_sample, is_training=False), self._b_sample, is_training=False)
 
-        ckpt_dir = './model/%s/checkpoints' % self.experiment_name
+        ckpt_dir = 'attgan/model/%s/checkpoints' % self.experiment_name
         utf.load_checkpoint(ckpt_dir, self.sess)
-
-    def getimage(self, att):
 
         sample = None
 
@@ -83,19 +83,18 @@ class _attgan:
             x_sample_opt_list = x_sample_opt_list[3:]
             sample = np.concatenate(x_sample_opt_list[self.atts.index(att)], 2)
 
-            # save_dir = '../output'
-            # if not os.path.isdir(save_dir):
-            #     os.mkdir(save_dir)
-            # imageio.imwrite('%s/%d.png' % (save_dir, idx + 1), sample)
+            save_dir = 'output'
+            if not os.path.isdir(save_dir):
+                os.mkdir(save_dir)
+            imageio.imwrite('%s/%d.png' % (save_dir, idx + 1), sample)
 
-            # print('%d.png done!' % (idx + 1))
+            print('%d.png done!' % (idx + 1))
 
         self.sess.close()
 
-        return sample
 
-import time
-start = time.time()
-att = _attgan()
-att.getimage("Blond_Hair")
-print(start - time.time())
+#import time
+#start = time.time()
+#att = _attgan()
+#att.getimage("Blond_Hair")
+#print(start - time.time())
