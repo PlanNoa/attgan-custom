@@ -60,8 +60,6 @@ class _attgan:
         ckpt_dir = 'attgan/model/%s/checkpoints' % self.experiment_name
         utf.load_checkpoint(ckpt_dir, self.sess)
 
-        sample = None
-
         for idx, batch in enumerate(self.te_data):
             xa_sample_ipt = batch[0]
             a_sample_ipt = batch[1]
@@ -86,15 +84,8 @@ class _attgan:
             save_dir = 'output'
             if not os.path.isdir(save_dir):
                 os.mkdir(save_dir)
-            imageio.imwrite('%s/%d.png' % (save_dir, idx + 1), sample)
+            imageio.imwrite('result.png', sample)
 
-            print('%d.png done!' % (idx + 1))
+            print('result.png done!')
 
         self.sess.close()
-
-
-#import time
-#start = time.time()
-#att = _attgan()
-#att.getimage("Blond_Hair")
-#print(start - time.time())
