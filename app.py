@@ -1,11 +1,9 @@
-
 from flask import Flask, send_file
 from flask_restful import Resource, Api
 from flask_restful import reqparse, request
 from werkzeug.datastructures import FileStorage
 from werkzeug.utils import secure_filename
 from attgan.getimage import _attgan
-
 
 app = Flask(__name__)
 api = Api(app)

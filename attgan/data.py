@@ -1,6 +1,5 @@
 import os
 
-import numpy as np
 import tensorflow as tf
 import tensorflow.contrib.eager as tfe
 from attgan.utils import session
