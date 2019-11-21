@@ -1,2 +1,13 @@
 
 output/384_shortcut1_inject1_none_hd/checkpoints/Epoch_(199)_(947of947).ckpt.data-00000-of-00001
+output/384_shortcut1_inject1_none_hd/checkpoints/Epoch_(199)_(947of947).ckpt.meta
+output/384_shortcut1_inject1_none_hd/checkpoints/Epoch_(199)_(947of947).ckpt.index
+output/384_shortcut1_inject1_none_hd/checkpoints/checkpoint
+.idea/attgan-custom.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+__pycache__/data.cpython-37.pyc
+__pycache__/models.cpython-37.pyc
+__pycache__/utils.cpython-37.pyc
