@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="167c4925-c538-47b7-80aa-c804ba39e87b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/attgan-custom.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/list_attr_celeba.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/list_attr_celeba.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/sample_testing/13000.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/sample_testing/13001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/sample_testing/13002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/setting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13000.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13000.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13001.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13002.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13002.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13003.png" beforeDir="false" afterPath="$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13003.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +21,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/attgan_custom$test.coverage" NAME="test Coverage Results" MODIFIED="1574313501564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/attgan_custom$data.coverage" NAME="data Coverage Results" MODIFIED="1574316837709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/attgan_custom$test.coverage" NAME="test Coverage Results" MODIFIED="1574316870356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1566147235">
@@ -30,28 +34,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="png" value="13" />
-          <entry key="py" value="4" />
+          <entry key="png" value="14" />
+          <entry key="py" value="7" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="13" />
+          <entry key="Image" value="14" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="152" />
+          <entry key="py" value="524" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="152" />
+          <entry key="Python" value="524" />
         </counts>
       </usages-collector>
     </session>
@@ -71,32 +75,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
+        <entry file="file://$PROJECT_DIR$/data/list_attr_celeba.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="38">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/list_attr_celeba.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
+            <state relative-caret-position="114">
+              <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
               <folding>
+                <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#987#1253#1" />
                 <element signature="e#5782#6117#0" />
               </folding>
@@ -105,10 +98,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/setting.txt">
+        <entry file="file://$PROJECT_DIR$/slimcnn/getattr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="384">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,6 +125,7 @@
       <find>dis_layers</find>
       <find>read</find>
       <find>n_att</find>
+      <find>celeba</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,10 +135,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/api.py" />
-        <option value="$PROJECT_DIR$/data.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/data/list_attr_celeba.txt" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/slimcnn/slimnet.py" />
+        <option value="$PROJECT_DIR$/slimcnn/getattr.py" />
+        <option value="$PROJECT_DIR$/data.py" />
       </list>
     </option>
   </component>
@@ -185,19 +184,6 @@
               <item name="attgan-custom" type="b2602c69:ProjectViewProjectNode" />
               <item name="attgan-custom" type="462c0819:PsiDirectoryNode" />
               <item name="output" type="462c0819:PsiDirectoryNode" />
-              <item name="128_shortcut1_inject1_none_40" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="attgan-custom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="attgan-custom" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
-              <item name="128_shortcut1_inject1_none_40" type="462c0819:PsiDirectoryNode" />
-              <item name="sample_testing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="attgan-custom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="attgan-custom" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
               <item name="384_shortcut1_inject1_none_hd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -215,7 +201,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pytorch-slim-cnn-master" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -230,7 +216,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="attgan-custom" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="attgan-custom" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -253,9 +261,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.data" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.data" />
       </list>
     </recent_temporary>
   </component>
@@ -336,24 +349,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
-          <folding>
-            <element signature="e#987#1253#1" />
-            <element signature="e#5782#6117#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/sample_testing/13000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/sample_testing/13001.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/output/128_shortcut1_inject1_none_40/sample_testing/13002.png">
@@ -369,6 +368,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13002.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13003.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13001.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/reinforcement recommandation system/Lib/site-packages/torch/serialization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="380" selection-start-line="380" selection-end-line="380" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slimcnn/slimnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1574315841877" expanded="true" signature="147:694" ph="..." />
+            <marker date="1574315841877" expanded="false" signature="696:1211" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -379,29 +416,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13002.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13003.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/data/list_attr_celeba.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="38">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slimcnn/getattr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13001.png">
+    <entry file="file://$PROJECT_DIR$/output/384_shortcut1_inject1_none_hd/sample_testing/13000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/list_attr_celeba.txt">
+    <entry file="file://$PROJECT_DIR$/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="114">
+          <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#987#1253#1" />
+            <element signature="e#5782#6117#0" />
+          </folding>
         </state>
       </provider>
     </entry>

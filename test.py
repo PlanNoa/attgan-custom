@@ -9,11 +9,6 @@ import data
 import models
 import imageio
 
-# ==============================================================================
-# =                                    param                                   =
-# ==============================================================================
-
-# model
 atts = ["Bald",
         "Bangs",
         "Black_Hair",
@@ -43,31 +38,18 @@ test_int = 1.0
 use_cropped_img = True
 experiment_name = '384_shortcut1_inject1_none_hd'
 
-# ==============================================================================
-# =                                   graphs                                   =
-# ==============================================================================
-
-# data
 sess = utf.session()
-te_data = data.Celeba('./data', atts, img_size, 1, part='test', sess=sess, crop=not use_cropped_img)
+te_data = data.Celeba('./data', atts, img_size, 1, sess=sess, crop=not use_cropped_img)
 
-# models
 Genc = partial(models.Genc, dim=enc_dim, n_layers=enc_layers)
 Gdec = partial(models.Gdec, dim=dec_dim, n_layers=dec_layers, shortcut_layers=shortcut_layers, inject_layers=inject_layers)
 
-# inputs
 xa_sample = tf.placeholder(tf.float32, shape=[None, img_size, img_size, 3])
 _b_sample = tf.placeholder(tf.float32, shape=[None, n_att])
 
-# sample
 x_sample = Gdec(Genc(xa_sample, is_training=False), _b_sample, is_training=False)
 
 
-# ==============================================================================
-# =                                    test                                    =
-# ==============================================================================
-
-# initialization
 ckpt_dir = './output/%s/checkpoints' % experiment_name
 utf.load_checkpoint(ckpt_dir, sess)
 

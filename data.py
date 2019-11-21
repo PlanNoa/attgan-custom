@@ -5,6 +5,8 @@ import tensorflow as tf
 import tensorflow.contrib.eager as tfe
 from utils import session
 
+from slimcnn.getattr import slimcnn
+
 def batch_dataset(dataset, batch_size, prefetch_batch=2, drop_remainder=True, filter=None,
                   map_func=None, num_threads=16, shuffle=True, buffer_size=4096, repeat=-1):
     if filter:
@@ -146,28 +148,20 @@ class Celeba(Dataset):
                 'Wearing_Hat': 35, 'Wearing_Lipstick': 36,
                 'Wearing_Necklace': 37, 'Wearing_Necktie': 38, 'Young': 39}
 
-    def __init__(self, data_dir, atts, img_resize, batch_size, prefetch_batch=2, drop_remainder=True,
-                 num_threads=16, shuffle=True, buffer_size=4096, repeat=-1, sess=None, part='train', crop=True):
+    def __init__(self, data_dir, atts, img_resize, batch_size, prefetch_batch=2,
+                 num_threads=16, buffer_size=4096, sess=None, crop=True):
         super(Celeba, self).__init__()
+
+        slimnet = slimcnn()
 
         list_file = os.path.join(data_dir, 'list_attr_celeba.txt')
         img_dir = os.path.join(data_dir, 'img_align_celeba_png')
 
         names = np.loadtxt(list_file, skiprows=2, usecols=[0], dtype=np.str)
         img_paths = [os.path.join(img_dir, name.replace('.jpg', '.png')) for name in names]
-        # img_paths = [os.path.join(img_dir, name) for name in names]
+        labels = list(map(slimnet.get_attr, img_paths))
+        print(labels)
 
-        att_id = [Celeba.att_dict[att] + 1 for att in atts]
-        labels = np.loadtxt(list_file, skiprows=2, usecols=att_id, dtype=np.int64)
-
-        # if img_resize == 64:
-        #     offset_h = 40
-        #     offset_w = 15
-        #     img_size = 148
-        # else:
-        #     offset_h = 26
-        #     offset_w = 3
-        #     img_size = 170
         offset_h = 40
         offset_w = 15
         img_size = 148
@@ -225,15 +219,3 @@ class Celeba(Dataset):
                         _set(att, 0, n)
 
         return att_batch
-
-
-if __name__ == '__main__':
-    import imlib as im
-    atts = ['Bald', 'Bangs', 'Black_Hair', 'Blond_Hair', 'Brown_Hair', 'Bushy_Eyebrows', 'Eyeglasses', 'Male', 'Mouth_Slightly_Open', 'Mustache', 'No_Beard', 'Pale_Skin', 'Young']
-    data = Celeba('./data', atts, 128, 32, part='val')
-    batch = data.get_next()
-    print(len(data))
-    print(batch[1][1], batch[1].dtype)
-    print(batch[0].min(), batch[1].max(), batch[0].dtype)
-    im.imshow(batch[0][1])
-    im.show()
