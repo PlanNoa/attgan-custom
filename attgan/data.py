@@ -29,30 +29,16 @@ def batch_dataset(dataset, batch_size, prefetch_batch=2, drop_remainder=True, fi
 
 def disk_image_batch_dataset(img_paths, batch_size, labels=None, prefetch_batch=2, drop_remainder=True, filter=None,
                              map_func=None, num_threads=16, shuffle=True, buffer_size=4096, repeat=-1):
-    """Disk image batch dataset.
 
-    This function is suitable for jpg and png files
-
-    img_paths: string list or 1-D tensor, each of which is an iamge path
-    labels: label list/tuple_of_list or tensor/tuple_of_tensor, each of which is a corresponding label
-    """
-    if labels is None:
-        dataset = tf.data.Dataset.from_tensor_slices(img_paths)
-    elif isinstance(labels, tuple):
-        dataset = tf.data.Dataset.from_tensor_slices((img_paths,) + tuple(labels))
-    else:
-        dataset = tf.data.Dataset.from_tensor_slices((img_paths, labels))
+    dataset = tf.data.Dataset.from_tensor_slices((img_paths, labels))
 
     def parse_func(path, *label):
         img = tf.read_file(path)
         img = tf.image.decode_png(img, 3)
         return (img,) + label
 
-    if map_func:
-        def map_func_(*args):
-            return map_func(*parse_func(*args))
-    else:
-        map_func_ = parse_func
+    def map_func_(*args):
+        return map_func(*parse_func(*args))
 
     dataset = batch_dataset(dataset, batch_size, prefetch_batch, drop_remainder, filter,
                             map_func_, num_threads, shuffle, buffer_size, repeat)
@@ -146,19 +132,17 @@ class Celeba(Dataset):
                 'Wearing_Hat': 35, 'Wearing_Lipstick': 36,
                 'Wearing_Necklace': 37, 'Wearing_Necktie': 38, 'Young': 39}
 
-    def __init__(self, data_dir, atts, img_resize, batch_size, prefetch_batch=2,
+    def __init__(self, data_dir, img_resize, batch_size, prefetch_batch=2,
                  num_threads=16, buffer_size=4096, sess=None, crop=True):
         super(Celeba, self).__init__()
 
         slimnet = slimcnn()
 
-        list_file = os.path.join(data_dir, 'list_attr_celeba.txt')
         img_dir = os.path.join(data_dir, 'img_align_celeba_png')
 
-        names = np.loadtxt(list_file, skiprows=2, usecols=[0], dtype=np.str)
+        names = ["dummy.png", "result.png"]
         img_paths = [os.path.join(img_dir, name.replace('.jpg', '.png')) for name in names]
         labels = list(map(slimnet.get_attr, img_paths))
-        print(labels)
 
         offset_h = 40
         offset_w = 15
